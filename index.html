@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Generator</title>
+  <script>
+    function generatePassword(length, includeSpecialChars) {
+      var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+      var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var numericChars = "0123456789";
+      var specialChars = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+
+      var allChars = lowercaseChars + uppercaseChars + numericChars;
+      if (includeSpecialChars) {
+        allChars += specialChars;
+      }
+
+      var password = "";
+
+      for (var i = 0; i < length; i++) {
+        var randomChar = allChars.charAt(Math.floor(Math.random() * allChars.length));
+        password += randomChar;
+      }
+
+      return password;
+    }
+
+    function selectPassword() {
+      var passwordElement = document.getElementById('password');
+      var range = document.createRange();
+      range.selectNodeContents(passwordElement);
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+
+    function handleLoad() {
+      var queryParams = new URLSearchParams(window.location.search);
+      var length = parseInt(queryParams.get('length'));
+      var includeSpecialChars = queryParams.get('specialChars') === 'true';
+
+      var password = generatePassword(length, includeSpecialChars);
+
+      document.getElementById('password').textContent = password;
+
+      selectPassword();
+    }
+  </script>
+</head>
+<body onload="handleLoad()">
+  <p id="password"></p>
+</body>
+</html>
