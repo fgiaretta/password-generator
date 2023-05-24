@@ -35,7 +35,7 @@
 
     function handleLoad() {
       var queryParams = new URLSearchParams(window.location.search);
-      var length = parseInt(queryParams.get('length'));
+      var length = parseInt(queryParams.get('length') || 16);
       var includeSpecialChars = queryParams.get('specialChars') === 'true';
 
       var password = generatePassword(length, includeSpecialChars);
