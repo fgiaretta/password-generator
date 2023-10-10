@@ -2,6 +2,14 @@
 
 PW Generator is a powerful and user-friendly password generator designed to generate strong and secure passwords effortlessly. This project aims to provide a reliable solution for creating robust passwords to enhance your online security.
 
+## Why choose this password generator?
+
+This password generator is a simple frontend that is easy to audit and use. Unlike other password generators, you can see all the code in the hosted website, and there are no tracking or backend calls. Your passwords are generated in your browser, ensuring maximum security and privacy.
+
+By using this password generator, you can create strong and secure passwords effortlessly, customized to your requirements. With features such as the option to include special characters and automatic password selection, you can enhance your online security and protect your sensitive data.
+
+Remember to use generated passwords responsibly and follow best practices for password management.
+
 ## Features
 
 - Customize password length according to your requirements.
